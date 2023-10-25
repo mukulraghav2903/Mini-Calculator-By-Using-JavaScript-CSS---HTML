@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Calculator by using Html, CSS and JavaScript</title>
+</head>
+<style>
+body{
+    background-color: antiquewhite;
+}
+.calculator{
+    width: 400px;
+    height: 440px;
+    border: 2px  darkmagenta solid;
+    margin-left: 38%;
+    background-color: lightblue;
+}
+#mainInputBar{
+    width: 90%;
+    margin-top: 15px;
+    margin-left: 9px;
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid gray;
+}
+.rows{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-left: 9px;
+    width: 100%;
+}
+input[type="button"] {
+    width: 85px;
+    height: 60px;
+    margin-right: 18px;
+    font-size: 20px;
+}
+marquee{
+    width: 95%;
+    /* border: 2px blueviolet solid; */
+    margin-top: 75px;
+    margin-left: 9px;
+    background-color: bisque;
+}
+</style>
+<body>
+    <!-- Calculator: -->
+    <h2 style="text-align: center; color: darkorange; margin-top: 50px;">Mini Calculator</h2>
+    <div class="calculator">
+        <input type="text" id="mainInputBar" readonly="">
+        <!-- Row1: -->
+        <div class="rows">
+            <input type="button" value="7" onclick="display('7')">
+            <input type="button" value="8" onclick="display('8')">
+            <input type="button" value="9" onclick="display('9')">
+            <input type="button" value="+" onclick="display('+')">
+        </div>
+
+        <!-- Row2: -->
+        <div class="rows">
+            <input type="button" value="4" onclick="display('4')">
+            <input type="button" value="5" onclick="display('5')">
+            <input type="button" value="6" onclick="display('6')">
+            <input type="button" value="-" onclick="display('-')">
+        </div>
+
+        <!-- Row3: -->
+        <div class="rows">
+            <input type="button" value="1" onclick="display('1')">
+            <input type="button" value="2" onclick="display('2')">
+            <input type="button" value="3" onclick="display('3')">
+            <input type="button" value="*" onclick="display('*')">
+        </div>
+
+        <!-- Row4: -->
+        <div class="rows">
+            <input type="button" value="Clr" onclick="clearMainBar()">
+            <input type="button" value="0" onclick="display('0')">
+            <input type="button" value="/" onclick="display('/')">
+            <input type="button" value="=" onclick="calculate()">
+        </div>
+
+        <marquee behavior="" direction="">Created By Mukul Raghav</marquee>
+    </div>
+
+<!-- JavaScript Code Part: -->
+<script>
+    //display(value):- this function is used to display the number in main bar;
+    function display(value) {
+        document.getElementById("mainInputBar").value +=value;
+    }
+
+    // function clearMainBar():- this function is used to clear the main bar.
+    function clearMainBar() {
+        document.getElementById("mainInputBar").value='';
+    }
+
+    function calculate() {
+        document.getElementById("mainInputBar").value=eval(document.getElementById("mainInputBar").value);
+    }
+</script>
+</body>
+</html>
